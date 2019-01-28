@@ -16,9 +16,9 @@ describe Problem do
     it 'should provide largest prime factor' do
       expect(@problem.problem3(600851475143)).to eq 6857
     end
-    # it 'should equal to prime number true' do
-    #   expect(@problem.is_it_prime(600851475143)).to eq 6857
-    # end
+    it 'should equal to prime number true' do
+      expect(@problem.is_it_prime(13195)).to eq 29
+    end
   end
 end
 

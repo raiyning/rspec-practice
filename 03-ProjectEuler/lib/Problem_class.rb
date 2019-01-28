@@ -21,25 +21,30 @@ class Problem
 
 
   def is_it_prime? (number)
+
     (2..number-1).each do |j|
       if number%j == 0
         return false 
       end
+      
     end
     return true
   end
 
   def problem3 (limit)
-    stored_prime = 0
-    (2..limit).each do |i|
-      if is_it_prime?(i)
-        if limit%i == 0
-          stored_prime = i
-          puts i
+    stored_prime = []
+    i = 2
+    new_limit = limit
+    while i <= new_limit
+      if divisible_by(limit,i)
+        if is_it_prime?(i)
+          new_limit/=i
+          stored_prime << i
         end
       end
+      i += 1
     end
-    return stored_prime.last
+   puts stored_prime.max
   end  
 
 end
